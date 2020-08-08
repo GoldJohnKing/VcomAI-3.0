@@ -49,6 +49,7 @@ if (count _VehArr > 0) then
 				{
 					if (damage _x > 0.2) then
 					{
+						if (_x isKindOf "Helicopter") then {_x land "LAND";}; // Edited: AI should not unload from helicopter if it does not land, so we force it
 						_x setUnloadInCombat [true, VCM_TURRETUNLOAD];
 						if (VCM_Debug) then {diag_log format ["VEHICLECHECK: Group can unload! Damaged vehicle! %1",_group];};
 					}
